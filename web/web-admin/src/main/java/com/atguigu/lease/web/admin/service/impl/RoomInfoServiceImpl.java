@@ -182,11 +182,6 @@ public class RoomInfoServiceImpl extends ServiceImpl<RoomInfoMapper, RoomInfo>
     @Override
     public IPage<RoomItemVo> pageItem(Page<RoomItemVo> roomItemVoPage, RoomQueryVo queryVo) {
         IPage<RoomItemVo> roomItemVoIPage = roomInfoMapper.pageItem(roomItemVoPage, queryVo);
-
-        roomItemVoIPage.getRecords().forEach(roomItemVo -> {
-            ApartmentInfo apartmentInfo = apartmentInfoMapper.selectById(roomItemVo.getApartmentId());
-            roomItemVo.setApartmentInfo(apartmentInfo);
-        });
         return roomItemVoIPage;
     }
 
