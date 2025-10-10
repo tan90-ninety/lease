@@ -18,6 +18,12 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+  data:
+    redis:
+      host: 172.16.253.129
+      port: 6379
+      database: 0
+      password: "0000"
 
 #用于打印框架生成的sql语句，便于调试
 mybatis-plus:
@@ -35,4 +41,6 @@ minio:
 
 springdoc:
   default-flat-param-object: true
+
+
 
