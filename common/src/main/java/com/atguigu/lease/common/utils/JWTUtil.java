@@ -13,7 +13,7 @@ public class JWTUtil {
     private static final SecretKey tokenSignKey = Keys.hmacShaKeyFor("M0PKKI6pYGVWWfDZw90a0lTpGYX1d4AQ".getBytes());
 
     public static String createToken(Long userId, String username) {
-        long tokenExpiration = 60 * 60 * 1000L;
+        long tokenExpiration = 60 * 60 * 1000L * 24;
         return Jwts.builder()
                 .expiration(new Date(System.currentTimeMillis() + tokenExpiration))
                 .subject("LOGIN_USER")
@@ -43,6 +43,6 @@ public class JWTUtil {
     }
 
     public static void main(String[] args) {
-        System.out.println(createToken(2L, "user"));
+        System.out.println(createToken(8L, "13632014750"));
     }
 }
