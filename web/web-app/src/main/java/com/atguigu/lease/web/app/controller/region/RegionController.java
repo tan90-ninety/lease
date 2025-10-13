@@ -1,4 +1,4 @@
-package com.atguigu.lease.web.app.controller.login;
+package com.atguigu.lease.web.app.controller.region;
 
 import com.atguigu.lease.common.result.Result;
 import com.atguigu.lease.model.entity.CityInfo;
