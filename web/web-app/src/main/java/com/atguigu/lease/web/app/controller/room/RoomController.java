@@ -25,9 +25,9 @@ public class RoomController {
     private RoomInfoService service;
 
     @Operation(summary = "分页查询房间列表")
-    @GetMapping("list")
-    public Result<IPage<RoomItemVo>> list(@RequestParam long current, @RequestParam long pageSize, RoomQueryVo queryVo) {
-        Page<RoomInfo> page = new Page<>(current, pageSize);
+    @GetMapping("pageItem")
+    public Result<IPage<RoomItemVo>> pageItem(@RequestParam long current, @RequestParam long size, RoomQueryVo queryVo) {
+        Page<RoomInfo> page = new Page<>(current, size);
         IPage<RoomItemVo> list = service.pageItem(page, queryVo);
         return Result.ok(list);
     }
